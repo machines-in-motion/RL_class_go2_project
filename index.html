@@ -170,6 +170,97 @@
   </div>
 </section>
 
+<!-- What is First-Order Gradient RL -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">What is First-Order Gradient RL?</h2>
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="content has-text-justified">
+          <p>
+            <b>First-order gradient reinforcement learning (RL)</b> computes policy updates using analytical gradients of the RL objective with respect to policy parameters. Unlike zero-order methods, which estimate gradients using sampled perturbations, first-order methods leverage the chain rule, requiring access to derivatives of both the reward and environment dynamics. This enables <b>more informative, lower-variance policy updates</b> and often dramatically improves sample efficiency—provided that these gradients are available.
+          </p>
+          <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center;">
+            <img src="static/images/formule.svg" alt="First-Order RL Objective Formula" style="max-width:100%; height:auto;">
+            <figcaption class="has-text-centered" style="margin-top:0.5em;">
+              Equation: Discounted return estimate as used in first-order policy optimization for RL.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Prior First-Order Methods: APG and MBRL -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Limitations of Prior First-Order Methods</h2>
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="content has-text-justified">
+          <p>
+            Previous first-order methods have taken two major paths:
+            <ul>
+              <li>
+                <b>Differentiable simulators</b> (such as APG): Directly compute exact gradients by backpropagating through physics-based simulation. <b>However, such simulators are rarely available for realistic or complex robotic environments</b> and can be impractical for multi-physics or contact-rich scenarios.
+              </li>
+              <li>
+                <b>Model-Based RL (MBRL):</b> Use a learned differentiable model to provide gradients. While flexible and general, <b>prediction errors compound along simulated rollouts</b>, which can degrade policy optimization.
+              </li>
+            </ul>
+          </p>
+          <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center;">
+            <img src="static/images/APG_MBRL_explanation.png" alt="APG vs MBRL: Differentiable Sim vs Learned Model" style="max-width:100%; height:auto;">
+            <figcaption class="has-text-centered" style="margin-top:0.5em;">
+              Comparison: APG leverages differentiable simulators for true gradients; MBRL relies on learned models, but rollouts diverge due to prediction errors.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Introduce DMO -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">DMO: Decoupled Forward-Backward Model-Based Policy Optimization</h2>
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="content has-text-justified">
+          <p>
+            <b>DMO (Decoupled forward-backward Model-based policy Optimization)</b> is a new first-order gradient RL method that decouples trajectory generation from gradient computation:
+          </p>
+          <ul>
+            <li>
+              <b>Trajectory unrolling uses a high-fidelity simulator,</b> ensuring realistic transitions and eliminating the compounding of model prediction errors.
+            </li>
+            <li>
+              <b>Gradients are computed via a learned differentiable model,</b> enabling efficient backpropagation even when the simulator isn’t itself differentiable.
+            </li>
+          </ul>
+          <p>
+            DMO thus combines the best of both worlds, bringing high sample efficiency, robust optimization, and reliable sim-to-real transfer. <b>DMO can be applied on top of any first-order RL algorithm via this forward-backward decoupling.</b>
+          </p>
+          <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center;">
+            <img src="static/images/DMO_explanation.png" alt="DMO Architecture" style="max-width:100%; height:auto;">
+            <figcaption class="has-text-centered" style="margin-top:0.5em;">
+              Architecture: DMO decouples forward simulation (top) from gradient computation (bottom) with the learned model, both referencing real transitions.
+            </figcaption>
+          </figure>
+          <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center; margin-top:2em;">
+            <img src="static/images/DMO_applied_to_SHAC.svg" alt="DMO applied to SHAC Loop Diagram" style="max-width:100%; height:auto;">
+            <figcaption class="has-text-centered" style="margin-top:0.5em;">
+              DMO Workflow: When applied to SHAC, DMO cycles between parallel simulation, learned model training, value function learning, and policy updates via the decoupled gradient.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <!-- BibTeX -->
   <section class="section" id="BibTeX">
