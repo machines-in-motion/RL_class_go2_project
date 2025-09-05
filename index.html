@@ -240,19 +240,19 @@
               <b>Gradients are computed via a learned differentiable model,</b> enabling efficient backpropagation even when the simulator isn’t itself differentiable.
             </li>
           </ul>
-          <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center; margin-top:2em;">
-            <img src="static/images/DMO_applied_to_SHAC.svg" alt="DMO applied to SHAC Loop Diagram" style="max-width:100%; height:auto;">
+          <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center;">
+            <img src="static/images/DMO_explanation.png" alt="DMO Architecture" style="max-width:100%; height:auto;">
             <figcaption class="has-text-centered" style="margin-top:0.5em;">
-              DMO Workflow: When applied to SHAC, DMO cycles between parallel simulation, learned model training, value function learning, and policy updates via the decoupled gradient.
+              Architecture: DMO decouples forward simulation (top) from gradient computation (bottom) with the learned model, both referencing real transitions.
             </figcaption>
           </figure>
           <p>
             DMO thus combines the best of both worlds, bringing high sample efficiency, robust optimization, and reliable sim-to-real transfer. <b>DMO can be applied on top of any first-order RL algorithm via this forward-backward decoupling.</b>
           </p>
-          <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center;">
-            <img src="static/images/DMO_explanation.png" alt="DMO Architecture" style="max-width:100%; height:auto;">
+          <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center; margin-top:2em;">
+            <img src="static/images/DMO_applied_to_SHAC.svg" alt="DMO applied to SHAC Loop Diagram" style="max-width:100%; height:auto;">
             <figcaption class="has-text-centered" style="margin-top:0.5em;">
-              Architecture: DMO decouples forward simulation (top) from gradient computation (bottom) with the learned model, both referencing real transitions.
+              DMO Workflow: When applied to SHAC, DMO cycles between parallel simulation, learned model training, value function learning, and policy updates via the decoupled gradient.
             </figcaption>
           </figure>
         </div>
