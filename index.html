@@ -269,6 +269,19 @@
       <p>
         We evaluated DMO across a suite of diverse continuous control benchmarks—locomotion and manipulation—using the DFlex GPU-accelerated simulator, as well as on real Unitree Go2 quadruped hardware, using IsaacGym for training. Our benchmarks compared against strong baselines: PPO (model-free), SAC (model-free), and MAAC (first-order model-based).
       </p>
+      <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center; margin-bottom:2em;">
+        <img src="static/images/figure_envs.png" alt="Benchmark Environments Visualized" style="max-width:100%; height:auto;">
+        <figcaption class="has-text-centered" style="margin-top:0.5em;">
+          <b>Benchmark environments:</b> Visualization of the simulation environments used in our experiments. From left to right: Ant, SNU Humanoid, Cheetah, Hopper, Allegro Hand, and Humanoid. These diverse tasks span locomotion and manipulation challenges.
+        </figcaption>
+      </figure>
+      <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center; margin-bottom:2em;">
+        <img src="static/images/banniere.png" alt="Go2 Quadruped: Sim-to-Real Results" style="max-width:100%; height:auto;">
+        <figcaption class="has-text-centered" style="margin-top:0.5em;">
+          <b>Go2 quadruped experiments:</b> Policies trained in IsaacGym simulated environments and directly deployed on the real Unitree Go2 robot in the real world, for both walking and bipedal tasks.
+        </figcaption>
+      </figure>
+
       <ul>
         <li><b>Sample efficiency:</b> DMO achieves high final performance with an order of magnitude fewer environment interactions than PPO and SAC, and consistently outperforms model-based MAAC.</li>
         <li><b>Wall-clock time:</b> Despite additional computation for gradient backpropagation, DMO converges significantly faster in real time than all baselines.</li>
