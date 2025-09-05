@@ -240,6 +240,12 @@
               <b>Gradients are computed via a learned differentiable model,</b> enabling efficient backpropagation even when the simulator isn’t itself differentiable.
             </li>
           </ul>
+          <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center; margin-top:2em;">
+            <img src="static/images/DMO_applied_to_SHAC.svg" alt="DMO applied to SHAC Loop Diagram" style="max-width:100%; height:auto;">
+            <figcaption class="has-text-centered" style="margin-top:0.5em;">
+              DMO Workflow: When applied to SHAC, DMO cycles between parallel simulation, learned model training, value function learning, and policy updates via the decoupled gradient.
+            </figcaption>
+          </figure>
           <p>
             DMO thus combines the best of both worlds, bringing high sample efficiency, robust optimization, and reliable sim-to-real transfer. <b>DMO can be applied on top of any first-order RL algorithm via this forward-backward decoupling.</b>
           </p>
@@ -249,18 +255,57 @@
               Architecture: DMO decouples forward simulation (top) from gradient computation (bottom) with the learned model, both referencing real transitions.
             </figcaption>
           </figure>
-          <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center; margin-top:2em;">
-            <img src="static/images/DMO_applied_to_SHAC.svg" alt="DMO applied to SHAC Loop Diagram" style="max-width:100%; height:auto;">
-            <figcaption class="has-text-centered" style="margin-top:0.5em;">
-              DMO Workflow: When applied to SHAC, DMO cycles between parallel simulation, learned model training, value function learning, and policy updates via the decoupled gradient.
-            </figcaption>
-          </figure>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Results Section -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Results</h2>
+    <div class="content has-text-justified">
+      <p>
+        We evaluated DMO across a suite of diverse continuous control benchmarks—locomotion and manipulation—using the DFlex GPU-accelerated simulator, as well as on real Unitree Go2 quadruped hardware, using IsaacGym for training. Our benchmarks compared against strong baselines: PPO (model-free), SAC (model-free), and MAAC (first-order model-based).
+      </p>
+      <ul>
+        <li><b>Sample efficiency:</b> DMO achieves high final performance with an order of magnitude fewer environment interactions than PPO and SAC, and consistently outperforms model-based MAAC.</li>
+        <li><b>Wall-clock time:</b> Despite additional computation for gradient backpropagation, DMO converges significantly faster in real time than all baselines.</li>
+        <li><b>Ablation (Decoupling):</b> We show that the key to DMO’s performance is the decoupling of rollouts and gradient computation. Using a learned model for both leads to much lower returns.</li>
+        <li><b>Gradient analysis:</b> Gradients computed via DMO remain much closer (in cosine similarity) to those from a ground-truth differentiable simulator than gradients from standard MBRL rollouts, supporting more reliable optimization.</li>
+      </ul>
+    </div>
+
+    <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center; margin-bottom:2em;">
+      <img src="static/images/sample_efficiency.jpg" alt="Sample efficiency" style="max-width:100%; height:auto;">
+      <figcaption class="has-text-centered" style="margin-top:0.5em;">
+        <b>Sample efficiency:</b> DMO achieves a high normalized return using dramatically fewer samples than PPO, SAC, and MAAC.
+      </figcaption>
+    </figure>
+    
+    <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center; margin-bottom:2em;">
+      <img src="static/images/time_efficiency.jpg" alt="Wall-clock time efficiency" style="max-width:100%; height:auto;">
+      <figcaption class="has-text-centered" style="margin-top:0.5em;">
+        <b>Wall-clock time efficiency:</b> DMO reaches high performance faster in wall-clock time than PPO, SAC, and MAAC on aggregate benchmarks.
+      </figcaption>
+    </figure>
+
+    <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center; margin-bottom:2em;">
+      <img src="static/images/decoupling_vs_no_decoupling.jpg" alt="Ablation: Decoupling vs. Model-Based Forward" style="max-width:100%; height:auto;">
+      <figcaption class="has-text-centered" style="margin-top:0.5em;">
+        <b>Ablation study:</b> Performance with DMO's decoupled update (blue) is nearly double that of a conventional model-based approach (pink) that uses the learned model for both rollouts and gradients.
+      </figcaption>
+    </figure>
+
+    <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center;">
+      <img src="static/images/gradient_quality.jpg" alt="Gradient quality analysis" style="max-width:100%; height:auto;">
+      <figcaption class="has-text-centered" style="margin-top:0.5em;">
+        <b>Gradient alignment:</b> Cosine similarity between DMO policy gradients and those from a differentiable simulator is significantly higher than with usual model-based rollouts, validating DMO's reliable optimization.
+      </figcaption>
+    </figure>
+  </div>
+</section>
 
   <!-- BibTeX -->
   <section class="section" id="BibTeX">
