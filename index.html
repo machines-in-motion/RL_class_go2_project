@@ -2,25 +2,48 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners -->
-  <meta name="description" content="DMO: Decoupled forward-backward Model-based policy Optimization for efficient first-order RL in robotics.">
-  <meta property="og:title" content="DMO: Decoupled Model-Based Policy Optimization"/>
-  <meta property="og:description" content="Trajectories from a high-fidelity simulator, gradients via a learned model—efficient first-order RL with sim-to-real transfer."/>
+  <!-- Meta tags for social media banners and SEO -->
+  <meta name="description" content="DMO: Decoupled forward-backward Model-based policy Optimization for efficient first-order reinforcement learning (RL) in robotics, with sim-to-real transfer on quadruped robots.">
+  <meta property="og:title" content="DMO: Decoupled Model-Based Policy Optimization for First-Order RL in Robotics"/>
+  <meta property="og:description" content="Efficient first-order gradient RL using high-fidelity simulators and learned models for decoupled backpropagation, enabling robust sim-to-real transfer in locomotion tasks."/>
   <meta property="og:url" content="https://machines-in-motion.github.io/DMO/"/>
   <!-- 1200x630 recommended -->
   <meta property="og:image" content="static/images/teaser_banner.png" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
-  <meta name="twitter:title" content="DMO: Decoupled Model-Based Policy Optimization">
-  <meta name="twitter:description" content="First-order gradients via a learned model on real simulator rollouts for robust, efficient policy optimization.">
+  <meta name="twitter:title" content="DMO: Decoupled Model-Based Policy Optimization for First-Order RL in Robotics">
+  <meta name="twitter:description" content="First-order gradients via a learned model on real simulator rollouts for robust, efficient policy optimization in robotics with sim-to-real transfer.">
   <!-- 1200x600 recommended -->
   <meta name="twitter:image" content="static/images/teaser_banner.png">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords -->
-  <meta name="keywords" content="Reinforcement Learning, Model-Based RL, First-Order Gradients, Robotics, Decoupled Backpropagation, Sim-to-Real">
+  <!-- Keywords: Optimized for academic search (include specific terms) -->
+  <meta name="keywords" content="Decoupled Model-Based Policy Optimization, First-Order Gradient RL, Model-Based Reinforcement Learning, Robotics, Sim-to-Real Transfer, Quadruped Locomotion, Decoupled Backpropagation, CoRL 2025">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="9Npy6kl3FgnOjJWh5flwLjasHnLzDaoelchkJnMm4oA" />
-  <title>DMO: First Order Model-Based RL through Decoupled Backpropagation</title>
+  <!-- Canonical URL to avoid duplicates -->
+  <link rel="canonical" href="https://machines-in-motion.github.io/DMO/">
+  <!-- Structured Data (Schema Markup) for ScholarlyArticle -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "First Order Model-Based RL through Decoupled Backpropagation (DMO)",
+    "url": "https://machines-in-motion.github.io/DMO/",
+    "author": [
+      {"@type": "Person", "name": "Joseph Amigo", "affiliation": "New York University"},
+      {"@type": "Person", "name": "Rooholla Khorrambakht", "affiliation": "New York University"},
+      {"@type": "Person", "name": "Elliot Chane-Sane", "affiliation": "LAAS-CNRS"},
+      {"@type": "Person", "name": "Nicolas Mansard", "affiliation": "LAAS-CNRS"},
+      {"@type": "Person", "name": "Ludovic Righetti", "affiliation": "New York University"}
+    ],
+    "datePublished": "2025-09-04",  // Update with actual publication date
+    "publisher": {"@type": "Organization", "name": "Conference on Robot Learning (CoRL) 2025"},
+    "keywords": "Model-Based Reinforcement Learning, Quadruped Locomotion, Sim-to-Real Transfer",
+    "abstract": "We present Decoupled forward-backward Model-based policy Optimization (DMO), a first-order gradient RL method that unrolls trajectories using a high-fidelity simulator while computing gradients via a learned differentiable dynamics model. This decoupling avoids compounding prediction errors in model rollouts and preserves the benefits of analytical gradients without requiring differentiable physics. Empirically, DMO improves sample and wall-clock efficiency across locomotion and manipulation benchmarks and deploys on a Unitree Go2 robot for both quadrupedal and bipedal locomotion tasks with robust sim-to-real transfer."
+  }
+  </script>
+  <title>DMO: Decoupled Model-Based Policy Optimization for First-Order RL in Robotics</title>  <!-- More keyword-rich title -->
   <link rel="icon" type="image/png" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="static/css/bulma.min.css">
