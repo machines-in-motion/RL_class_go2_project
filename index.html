@@ -215,18 +215,39 @@
   </section>
 
   <!-- Resources -->
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Resources</h2>
-      <div class="content">
-        <ul>
-          <li>Isaac Lab overview, robots, and environments including Unitree Go2 and legged tasks.</li>
-          <li>Massively parallel PPO for legged locomotion with fast training and sim-to-real transfer.</li>
-          <li>NYU Tandon course context and syllabus references for RL and optimal control topics.</li>
-        </ul>
-      </div>
+<!-- Resources -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Resources</h2>
+    <div class="content">
+      <ul>
+        <li>
+          <a href="https://isaac-sim.github.io/IsaacLab/main/source/setup/ecosystem.html" target="_blank" rel="noopener">
+            Isaac Lab documentation
+          </a>
+          — Overview of the Isaac Lab ecosystem and where it fits within Isaac Sim, including core concepts and workflows. <!-- Ref: official docs -->
+        </li>
+        <li>
+          <a href="https://github.com/isaac-sim/IsaacLab/tree/main/source/isaaclab_tasks/isaaclab_tasks/direct/anymal_c" target="_blank" rel="noopener">
+            Isaac Lab ANYmal C environment
+          </a>
+          — This targets ANYmal C (not Unitree Go2), so use it as a reference and adapt robot config, assets, and reward to Go2. <!-- Ref: ANYmal C env -->
+        </li>
+        <li>
+          <a href="https://machines-in-motion.github.io/DMO/" target="_blank" rel="noopener">
+            DMO (IsaacGym) Go2 walking project page
+          </a>
+          &nbsp;•&nbsp;
+          <a href="https://github.com/Jogima-cyber/IsaacGymEnvs/blob/e351da69e05e0433e746cef0537b50924fd9fdbf/isaacgymenvs/tasks/go2_terrain.py" target="_blank" rel="noopener">
+            go2_terrain.py
+          </a>
+          — Reward function used by the authors is <code>diffRecalculateReward</code>; this implementation includes strong reward shaping, domain randomization, and training disturbances for robust sim‑to‑real, but it is written for legacy IsaacGym and the challenge is to re-implement it in Isaac Lab. <!-- Ref: DMO + code -->
+        </li>
+      </ul>
     </div>
-  </section>
+  </diviv>
+</section>
+
 
   <!-- Footer -->
   <footer class="footer">
