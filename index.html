@@ -1,53 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <!-- Meta tags for social media banners and SEO -->
-  <meta name="description" content="DMO: Decoupled forward-backward Model-based policy Optimization for efficient first-order reinforcement learning (RL) in robotics, with sim-to-real transfer on quadruped robots.">
-  <meta property="og:title" content="DMO: Decoupled Model-Based Policy Optimization for First-Order RL in Robotics"/>
-  <meta property="og:description" content="Efficient first-order gradient RL using high-fidelity simulators and learned models for decoupled backpropagation, enabling robust sim-to-real transfer in locomotion tasks."/>
-  <meta property="og:url" content="https://machines-in-motion.github.io/DMO/"/>
-  <!-- 1200x630 recommended -->
-  <meta property="og:image" content="https://machines-in-motion.github.io/DMO/static/images/teaser_banner.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NYU Tandon RL project: train a Unitree Go2 walking policy in Isaac Lab, starting from a minimal velocity-tracking reward and iterating toward a robust, transferable gait.">
+  <meta name="keywords" content="Reinforcement Learning, PPO, Isaac Lab, Isaac Gym, Quadruped Locomotion, Unitree Go2, Sim-to-Real, NYU Tandon">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NYU RL & Optimal Control Project — Go2 Locomotion in Isaac Lab"/>
+  <meta property="og:description" content="Train a Go2 walking policy with RL in Isaac Lab, improve reward shaping and robustness, and aim for sim-to-real readiness."/>
+  <meta property="og:image" content="static/images/teaser_banner.png"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
-  <meta name="twitter:title" content="DMO: Decoupled Model-Based Policy Optimization for First-Order RL in Robotics">
-  <meta name="twitter:description" content="First-order gradients via a learned model on real simulator rollouts for robust, efficient policy optimization in robotics with sim-to-real transfer.">
-  <!-- 1200x600 recommended -->
-  <meta name="twitter:image" content="https://machines-in-motion.github.io/DMO/static/images/teaser_banner.png" />
+  <meta property="og:url" content="https://your-org.github.io/nyu-rl-go2-project/"/>
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords: Optimized for academic search (include specific terms) -->
-  <meta name="keywords" content="Decoupled Model-Based Policy Optimization, First-Order Gradient RL, Model-Based Reinforcement Learning, Robotics, Sim-to-Real Transfer, Quadruped Locomotion, Decoupled Backpropagation, CoRL 2025">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="index, follow">
-  <meta name="google-site-verification" content="9Npy6kl3FgnOjJWh5flwLjasHnLzDaoelchkJnMm4oA" />
-  <!-- Canonical URL to avoid duplicates -->
-  <link rel="canonical" href="https://machines-in-motion.github.io/DMO/">
-  <!-- Structured Data (Schema Markup) for ScholarlyArticle -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "First Order Model-Based RL through Decoupled Backpropagation (DMO)",
-    "url": "https://machines-in-motion.github.io/DMO/",
-    "author": [
-      {"@type": "Person", "name": "Joseph Amigo", "affiliation": "New York University"},
-      {"@type": "Person", "name": "Rooholla Khorrambakht", "affiliation": "New York University"},
-      {"@type": "Person", "name": "Elliot Chane-Sane", "affiliation": "LAAS-CNRS"},
-      {"@type": "Person", "name": "Nicolas Mansard", "affiliation": "LAAS-CNRS"},
-      {"@type": "Person", "name": "Ludovic Righetti", "affiliation": "New York University"}
-    ],
-    "datePublished": "2025-09-04",  // Update with actual publication date
-    "publisher": {"@type": "Organization", "name": "Conference on Robot Learning (CoRL) 2025"},
-    "keywords": "Model-Based Reinforcement Learning, Quadruped Locomotion, Sim-to-Real Transfer",
-    "abstract": "We present Decoupled forward-backward Model-based policy Optimization (DMO), a first-order gradient RL method that unrolls trajectories using a high-fidelity simulator while computing gradients via a learned differentiable dynamics model. This decoupling avoids compounding prediction errors in model rollouts and preserves the benefits of analytical gradients without requiring differentiable physics. Empirically, DMO improves sample and wall-clock efficiency across locomotion and manipulation benchmarks and deploys on a Unitree Go2 robot for both quadrupedal and bipedal locomotion tasks with robust sim-to-real transfer."
-  }
-  </script>
-  <title>DMO: Decoupled Model-Based Policy Optimization for First-Order RL in Robotics</title>  <!-- More keyword-rich title -->
+  <meta name="twitter:title" content="NYU RL & Optimal Control Project — Go2 Locomotion in Isaac Lab">
+  <meta name="twitter:description" content="From a weak baseline to a stable trot: improve RL rewards, robustness, and gait quality in Isaac Lab.">
+  <meta name="twitter:image" content="static/images/teaser_banner.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://your-org.github.io/nyu-rl-go2-project/">
+
+  <!-- Title -->
+  <title>NYU RL Project — Go2 Locomotion in Isaac Lab</title>
+
+  <!-- Icons -->
   <link rel="icon" type="image/png" href="favicon-48x48.png" sizes="48x48">
   <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
   <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Fonts & CSS -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
@@ -55,310 +42,217 @@
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
 </head>
+
 <body>
   <!-- Hero / Title -->
-  <section class="hero">
+  <section class="hero is-dark">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">First Order Model-Based RL through Decoupled Backpropagation (DMO)</h1>
-            <div class="is-size-5"><a href="https://www.corl.org/" class="publication-venue">Conference on Robot Learning (CoRL) 2025</a></div>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><a href="https://www.linkedin.com/in/joseph-amigo-bb876a174">Joseph Amigo</a><sup>1,2</sup>,</span>
-              <span class="author-block"><a href="https://www.linkedin.com/in/r-khorrambakht/">Rooholla Khorrambakht</a><sup>1</sup>,</span>
-              <span class="author-block"><a href="https://elliotchanesane31.github.io/">Elliot Chane-Sane</a><sup>2</sup>,</span>
-              <span class="author-block"><a href="https://gepettoweb.laas.fr/index.php/Members/NicolasMansard">Nicolas Mansard</a><sup>2,3</sup></span>
-              <span class="author-block"><a href="https://righetti.github.io/">Ludovic Righetti</a><sup>1,3</sup></span>
-            </div>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup> New York University,</span>
-              <span class="author-block"><sup>2</sup> LAAS-CNRS,</span>
-              <span class="author-block"><sup>3</sup> ANITI</span>
-            </div>
-
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- ArXiv link (update when available) -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2509.00215v2" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
-                  </a>
-                </span>
-                <!-- Code repository -->
-                <span class="link-block">
-                  <a href="https://github.com/machines-in-motion/DMO_code" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fab fa-github"></i></span><span>Code (Work in Progress)</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://x.com/Jsphamigo/status/1964347428221415450" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <svg class="svg-inline--fa fa-twitter fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg><!-- <i class="fab fa-twitter"></i> Font Awesome fontawesome.com -->
-                    </span>
-                    <span>Tweet</span>
-                  </a>
-                </span>
-              </div>
-            </div>
-
+            <h1 class="title is-2">Reinforcement Learning and Optimal Control for Autonomous Systems I — Project</h1>
+            <p class="subtitle is-5">Train a Unitree Go2 walking policy in Isaac Lab and iterate from a weak baseline to a robust gait.</p>
+            <p class="is-size-6">Instructor: Prof. <a href="https://engineering.nyu.edu/faculty/ludovic-righetti" target="_blank">Ludovic Righetti</a>, NYU Tandon School of Engineering.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Teaser video (Method Explanation) -->
-  <section class="hero teaser">
+  <!-- 1) Parkour Showcase -->
+  <section class="section">
     <div class="container is-max-desktop">
-      <div class="hero-body">
-        <video id="teaser" controls muted loop height="100%">
-          <source src="static/videos/explanation.mp4" type="video/mp4">
-        </video>
+      <h2 class="title is-3 has-text-centered">Quadruped Parkour Inspiration</h2>
+      <div class="content has-text-justified">
+        <p>
+          Recent quadruped videos demonstrate agile jumping, stair climbing, and dynamic maneuvers that motivate this project’s performance goals for gait quality and robustness.
+        </p>
+        <p>
+          Many state-of-the-art locomotion policies are trained with deep reinforcement learning such as PPO in massively parallel GPU simulators like NVIDIA Isaac Gym and its modern successor Isaac Lab.
+        </p>
       </div>
+
+      <div class="columns is-multiline is-variable is-5">
+        <!-- YOUTUBE EMBED 1 -->
+        <div class="column is-12-mobile is-4-tablet is-4-desktop">
+          <div class="card" style="height:100%;">
+            <div class="card-image">
+              <figure class="image is-16by9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/iaBDDpuJglY?si=PfxH78lsoPbeM7H1" title="Unitree Go2 Parkour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <!--<iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/VIDEO_ID_1" title="Unitree Parkour Clip 1" frameborder="0" allowfullscreen></iframe>-->
+              </figure>
+            </div>
+            <div class="card-content" style="padding:0.75rem 1rem;">
+              <p class="has-text-weight-semibold">Unitree in the wild: dynamic maneuvers and jumps.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- YOUTUBE EMBED 2 -->
+        <div class="column is-12-mobile is-4-tablet is-4-desktop">
+          <div class="card" style="height:100%;">
+            <div class="card-image">
+              <figure class="image is-16by9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/cuboZYHGiMc?si=VN683n4HQIQMi8dR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <!--<iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/VIDEO_ID_2" title="Go2 Parkour on Slippery Terrain" frameborder="0" allowfullscreen></iframe>-->
+              </figure>
+            </div>
+            <div class="card-content" style="padding:0.75rem 1rem;">
+              <p class="has-text-weight-semibold">Extreme Parkour with Legged Robots (Xuxin Cheng*, Kexin Shi*, Ananye Agarwal, Deepak Pathak)</p>
+            </div>
+          </div>
+        </div>
+
+      <p class="is-size-6 has-text-grey">
+        Note: Examples above are external videos meant as inspiration; they showcase what robust locomotion policies and systems can achieve when trained and tuned extensively on IsaacLab.
+      </p>
     </div>
   </section>
 
-  <!-- Abstract -->
+  <!-- 2) Project Overview -->
   <section class="section hero is-light">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              We present Decoupled forward-backward Model-based policy Optimization (DMO), a first-order gradient RL method that unrolls trajectories using a high-fidelity simulator while computing gradients via a learned differentiable dynamics model. This decoupling avoids compounding prediction errors in model rollouts and preserves the benefits of analytical gradients without requiring differentiable physics. Empirically, DMO improves sample and wall-clock efficiency across locomotion and manipulation benchmarks and deploys on a Unitree Go2 robot for both quadrupedal and bipedal locomotion tasks with robust sim-to-real transfer.
-            </p>
-          </div>
-        </div>
+      <h2 class="title is-3 has-text-centered">Project overview</h2>
+      <div class="content has-text-justified">
+        <p>
+          The goal is to start from a minimal Isaac Lab training pipeline and significantly improve the learned Go2 walking policy through reward design and robustness techniques.
+        </p>
+        <p>
+          The provided baseline tracks only linear and angular velocities, which leads to a very poor gait that is unstable and not transferable to hardware without additional shaping and constraints.
+        </p>
+      </div>
+
+      <h3 class="title is-4">What you will do</h3>
+      <div class="content">
+        <ul>
+          <li>Extend the reward beyond velocity tracking by adding terms for posture stabilization, foot clearance, foot slip minimization, smooth actions, contact regularization, and collision penalties.</li>
+          <li>Use domain randomization to improve robustness across speeds, disturbances, and ground properties.</li>
+          <li>Benchmark with metrics like velocity tracking error, base orientation error, slip count, episode length, and energy proxies to guide iteration.</li>
+        </ul>
+      </div>
+
+      <h3 class="title is-4">Tools and references</h3>
+      <div class="content">
+        <ul>
+          <li>Isaac Lab: unified, modular framework with legged locomotion tasks and Unitree robot assets including Go2.</li>
+          <li>PPO baselines for fast legged locomotion training in GPU simulators such as Isaac Gym, with demonstrated sim-to-real policies.</li>
+          <li>Course context: NYU Tandon RL and optimal control coursework led by Prof. Righetti.</li>
+        </ul>
       </div>
     </div>
   </section>
 
-<!-- Additional Clips: three videos side by side -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Additional Clips</h2>
-      <div class="columns is-multiline is-variable is-5">
-        <!-- Quadrupedal hardware -->
-        <div class="column is-12-mobile is-4-tablet is-4-desktop">
-          <div class="card" style="height: 100%;">
+  <!-- 3) Baseline: Poor Policy -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Baseline policy (weak)</h2>
+      <div class="columns is-centered">
+        <div class="column is-10">
+          <div class="card">
             <div class="card-image">
               <figure class="image">
-                <video poster="static/images/quad_poster.png" style="width:100%; height:100%;" controls muted loop playsinline>
-                  <source src="static/videos/demo_hardware_quadrupedal.mp4" type="video/mp4">
+                <video poster="static/images/baseline_poster.png" style="width:100%; height:auto;" controls muted loop playsinline>
+                  <source src="static/videos/baseline_poor.mp4" type="video/mp4">
                 </video>
               </figure>
             </div>
-            <div class="card-content" style="padding: 0.75rem 1rem;">
-              <p class="has-text-weight-semibold">Quadrupedal Hardware Experiments (Go2 Walking)</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bipedal hardware -->
-        <div class="column is-12-mobile is-4-tablet is-4-desktop">
-          <div class="card" style="height: 100%;">
-            <div class="card-image">
-              <figure class="image">
-                <video poster="static/images/biped_poster.png" style="width:100%; height:100%;" controls muted loop playsinline>
-                  <source src="static/videos/demo_hardware_bipedal.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </div>
-            <div class="card-content" style="padding: 0.75rem 1rem;">
-              <p class="has-text-weight-semibold">Bipedal Hardware Experiments (Go2 Front-Legs Balancing)</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Simulation demos -->
-        <div class="column is-12-mobile is-4-tablet is-4-desktop">
-          <div class="card" style="height: 100%;">
-            <div class="card-image">
-              <figure class="image">
-                <video poster="static/images/sim_poster.png" style="width:100%; height:100%;" controls muted loop playsinline>
-                  <source src="static/videos/demo_simulation.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </div>
-            <div class="card-content" style="padding: 0.75rem 1rem;">
-              <p class="has-text-weight-semibold">Simulation Demos</p>
+            <div class="card-content">
+              <p>
+                This is the starting point with only linear and yaw velocity tracking in the reward, which typically yields unstable contacts, slipping feet, and poor base control that do not transfer to the real robot.
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- What is First-Order Gradient RL -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">What is First-Order Gradient RL?</h2>
-    <div class="columns is-centered">
-      <div class="column is-10">
-        <div class="content has-text-justified">
-          <p>
-            <b>First-order gradient reinforcement learning (RL)</b> computes policy updates using analytical gradients of the RL objective with respect to policy parameters. Unlike zero-order methods, which estimate gradients using sampled perturbations, first-order methods leverage the chain rule, requiring access to derivatives of both the reward and environment dynamics. This enables <b>more informative, lower-variance policy updates</b> and often dramatically improves sample efficiency—provided that these gradients are available.
-          </p>
-          <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center;">
-            <img src="static/images/formule.svg" alt="First-Order RL Objective Formula" style="max-width:100%; height:auto;">
-            <figcaption class="has-text-centered" style="margin-top:0.5em;">
-              Equation: Discounted return estimate as used in first-order policy optimization for RL.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Prior First-Order Methods: APG and MBRL -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Limitations of Prior First-Order Methods</h2>
-    <div class="columns is-centered">
-      <div class="column is-10">
-        <div class="content has-text-justified">
-          <p>
-            Previous first-order methods have taken two major paths:
-            <ul>
-              <li>
-                <b>Differentiable simulators</b> (such as APG): Directly compute exact gradients by backpropagating through physics-based simulation. <b>However, such simulators are rarely available for realistic or complex robotic environments</b> and can be impractical for multi-physics or contact-rich scenarios.
-              </li>
-              <li>
-                <b>Model-Based RL (MBRL):</b> Use a learned differentiable model to provide gradients. While flexible and general, <b>prediction errors compound along simulated rollouts</b>, which can degrade policy optimization.
-              </li>
-            </ul>
-          </p>
-          <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center;">
-            <img src="static/images/APG_MBRL_explanation.png" alt="APG vs MBRL: Differentiable Sim vs Learned Model" style="max-width:100%; height:auto;">
-            <figcaption class="has-text-centered" style="margin-top:0.5em;">
-              Comparison: APG leverages differentiable simulators for true gradients; MBRL relies on learned models, but rollouts diverge due to prediction errors.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Introduce DMO -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">DMO: Decoupled Forward-Backward Model-Based Policy Optimization</h2>
-    <div class="columns is-centered">
-      <div class="column is-10">
-        <div class="content has-text-justified">
-          <p>
-            <b>DMO (Decoupled forward-backward Model-based policy Optimization)</b> is a new first-order gradient RL method that decouples trajectory generation from gradient computation:
-          </p>
-          <ul>
-            <li>
-              <b>Trajectory unrolling uses a high-fidelity simulator,</b> ensuring realistic transitions and eliminating the compounding of model prediction errors.
-            </li>
-            <li>
-              <b>Gradients are computed via a learned differentiable model,</b> enabling efficient backpropagation even when the simulator isn’t itself differentiable.
-            </li>
-          </ul>
-          <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center;">
-            <img src="static/images/DMO_explanation.png" alt="DMO Architecture" style="max-width:100%; height:auto;">
-            <figcaption class="has-text-centered" style="margin-top:0.5em;">
-              Architecture: DMO decouples forward simulation (top) from gradient computation (bottom) with the learned model, both referencing real transitions.
-            </figcaption>
-          </figure>
-          <p>
-            DMO thus combines the best of both worlds, bringing high sample efficiency, robust optimization, and reliable sim-to-real transfer. <b>DMO can be applied on top of any first-order RL algorithm via this forward-backward decoupling.</b>
-          </p>
-          <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center; margin-top:2em;">
-            <img src="static/images/DMO_applied_to_SHAC.svg" alt="DMO applied to SHAC Loop Diagram" style="max-width:100%; height:auto;">
-            <figcaption class="has-text-centered" style="margin-top:0.5em;">
-              DMO Workflow: When applied to SHAC, DMO cycles between parallel simulation, learned model training, value function learning, and policy updates via the decoupled gradient.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Results Section -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Results</h2>
-    <div class="content has-text-justified">
-      <p>
-        We evaluated DMO across a suite of diverse continuous control benchmarks—locomotion and manipulation—using the DFlex GPU-accelerated simulator, as well as on real Unitree Go2 quadruped hardware, using IsaacGym for training. Our benchmarks compared against strong baselines: PPO (model-free), SAC (model-free), and MAAC (first-order model-based).
+      <p class="is-size-6 has-text-grey has-text-centered" style="margin-top:0.75rem;">
+        Your task is to improve this policy using principled shaping robustness strategies.
       </p>
-      <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center; margin-bottom:2em;">
-        <img src="static/images/figure_envs.png" alt="Benchmark Environments Visualized" style="max-width:100%; height:auto;">
-        <figcaption class="has-text-centered" style="margin-top:0.5em;">
-          <b>Benchmark environments:</b> Visualization of the simulation environments used in our experiments. From left to right: Ant, SNU Humanoid, Cheetah, Hopper, Allegro Hand, and Humanoid. These diverse tasks span locomotion and manipulation challenges.
-        </figcaption>
-      </figure>
-      <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center; margin-bottom:2em;">
-        <img src="static/images/banniere.png" alt="Go2 Quadruped: Sim-to-Real Results" style="max-width:100%; height:auto;">
-        <figcaption class="has-text-centered" style="margin-top:0.5em;">
-          <b>Go2 quadruped experiments:</b> Policies trained in IsaacGym simulated environments and directly deployed on the real Unitree Go2 robot in the real world, for both walking and bipedal tasks.
-        </figcaption>
-      </figure>
-
-      <ul>
-        <li><b>Sample efficiency:</b> DMO achieves high final performance with an order of magnitude fewer environment interactions than PPO and SAC, and consistently outperforms model-based MAAC.</li>
-        <li><b>Wall-clock time:</b> Despite additional computation for gradient backpropagation, DMO converges significantly faster in real time than all baselines.</li>
-        <li><b>Ablation (Decoupling):</b> We show that the key to DMO’s performance is the decoupling of rollouts and gradient computation. Using a learned model for both leads to much lower returns.</li>
-        <li><b>Gradient analysis:</b> Gradients computed via DMO remain much closer (in cosine similarity) to those from a ground-truth differentiable simulator than gradients from standard MBRL rollouts, supporting more reliable optimization.</li>
-      </ul>
     </div>
+  </section>
 
-    <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center; margin-bottom:2em;">
-      <img src="static/images/sample_efficiency.jpg" alt="Sample efficiency" style="max-width:100%; height:auto;">
-      <figcaption class="has-text-centered" style="margin-top:0.5em;">
-        <b>Sample efficiency:</b> DMO achieves a high normalized return using dramatically fewer samples than PPO, SAC, and MAAC.
-      </figcaption>
-    </figure>
-    
-    <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center; margin-bottom:2em;">
-      <img src="static/images/time_efficiency.jpg" alt="Wall-clock time efficiency" style="max-width:100%; height:auto;">
-      <figcaption class="has-text-centered" style="margin-top:0.5em;">
-        <b>Wall-clock time efficiency:</b> DMO reaches high performance faster in wall-clock time than PPO, SAC, and MAAC on aggregate benchmarks.
-      </figcaption>
-    </figure>
+  <!-- 4) Target Gait Examples -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Target gait examples</h2>
+      <p class="has-text-justified">
+        The following local clips illustrate the type of stable, symmetric trot and directional tracking we expect by the end of the project, emphasizing clean footfalls, limited slip, and consistent base orientation.
+      </p>
 
-    <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center; margin-bottom:2em;">
-      <img src="static/images/decoupling_vs_no_decoupling.jpg" alt="Ablation: Decoupling vs. Model-Based Forward" style="max-width:100%; height:auto;">
-      <figcaption class="has-text-centered" style="margin-top:0.5em;">
-        <b>Ablation study:</b> Performance with DMO's decoupled update (blue) is nearly double that of a conventional model-based approach (pink) that uses the learned model for both rollouts and gradients.
-      </figcaption>
-    </figure>
+      <div class="columns is-multiline is-variable is-5">
+        <!-- Target 1 -->
+        <div class="column is-12-mobile is-4-tablet is-4-desktop">
+          <div class="card" style="height:100%;">
+            <div class="card-image">
+              <figure class="image">
+                <video poster="static/images/target_trot_poster.png" style="width:100%; height:100%;" controls muted loop playsinline>
+                  <source src="static/videos/target_trot_stable.mp4" type="video/mp4">
+                </video>
+              </figure>
+            </div>
+            <div class="card-content" style="padding:0.75rem 1rem;">
+              <p class="has-text-weight-semibold">Stable trot at nominal speed with low slip.</p>
+            </div>
+          </div>
+        </div>
 
-    <figure class="image is-flex is-justify-content-center" style="flex-direction: column; align-items: center;">
-      <img src="static/images/gradient_quality.jpg" alt="Gradient quality analysis" style="max-width:100%; height:auto;">
-      <figcaption class="has-text-centered" style="margin-top:0.5em;">
-        <b>Gradient alignment:</b> Cosine similarity between DMO policy gradients and those from a differentiable simulator is significantly higher than with usual model-based rollouts, validating DMO's reliable optimization.
-      </figcaption>
-    </figure>
-  </div>
-</section>
+        <!-- Target 2 -->
+        <div class="column is-12-mobile is-4-tablet is-4-desktop">
+          <div class="card" style="height:100%;">
+            <div class="card-image">
+              <figure class="image">
+                <video poster="static/images/target_turn_poster.png" style="width:100%; height:100%;" controls muted loop playsinline>
+                  <source src="static/videos/target_tracking_turns.mp4" type="video/mp4">
+                </video>
+              </figure>
+            </div>
+            <div class="card-content" style="padding:0.75rem 1rem;">
+              <p class="has-text-weight-semibold">Accurate linear and yaw tracking through gentle turns.</p>
+            </div>
+          </div>
+        </div>
 
-  <!-- BibTeX -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>@inproceedings{amigo2025dmo,
-  title={First Order Model-Based RL through Decoupled Backpropagation},
-  author={Amigo, Joseph and Khorrambakht, Rooholla and Chane-Sane, Elliot and Righetti, Ludovic and Mansard, Nicolas},
-  booktitle={Conference on Robot Learning (CoRL)},
-  year={2025}
-}</code></pre>
+        <!-- Target 3 -->
+        <div class="column is-12-mobile is-4-tablet is-4-desktop">
+          <div class="card" style="height:100%;">
+            <div class="card-image">
+              <figure class="image">
+                <video poster="static/images/target_terrain_poster.png" style="width:100%; height:100%;" controls muted loop playsinline>
+                  <source src="static/videos/target_rough_terrain.mp4" type="video/mp4">
+                </video>
+              </figure>
+            </div>
+            <div class="card-content" style="padding:0.75rem 1rem;">
+              <p class="has-text-weight-semibold">Robust trot on mild uneven terrain with minimal disturbances.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="is-size-6 has-text-grey">
+        These are examples to calibrate expectations for gait quality rather than strict benchmarks, and you should document design choices that lead to similar behavior.
+      </p>
+    </div>
+  </section>
+
+  <!-- Resources -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Resources</h2>
+      <div class="content">
+        <ul>
+          <li>Isaac Lab overview, robots, and environments including Unitree Go2 and legged tasks.</li>
+          <li>Massively parallel PPO for legged locomotion with fast training and sim-to-real transfer.</li>
+          <li>NYU Tandon course context and syllabus references for RL and optimal control topics.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -369,10 +263,10 @@
         <div class="column is-8">
           <div class="content">
             <p>
-              This page uses the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> adapted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-              You are free to borrow the source code of this website; please link back in the footer.
-              <br>
-              Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+              This page presents a course project for NYU Tandon’s Reinforcement Learning and Optimal Control sequence and uses a lightweight academic project page template.
+            </p>
+            <p>
+              Example external videos are embedded as fair-use educational references and remain property of their respective creators on YouTube.
             </p>
           </div>
         </div>
@@ -380,12 +274,11 @@
     </div>
   </footer>
 
-  <!-- Optional: initialize carousels if IDs differ -->
+  <!-- Optional: initialize carousels if used -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      if (bulmaCarousel) {
-        bulmaCarousel.attach('#results-carousel', { slidesToScroll: 1, slidesToShow: 1, loop: true, autoplay: true });
-        bulmaCarousel.attach('#results-carousel-extra', { slidesToScroll: 1, slidesToShow: 1, loop: true, autoplay: true });
+      if (window.bulmaCarousel) {
+        // Example: bulmaCarousel.attach('.carousel', { loop: true, autoplay: true });
       }
     });
   </script>
