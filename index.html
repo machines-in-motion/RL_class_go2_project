@@ -110,24 +110,27 @@
           </div>
         </div>
       </div>
-
+      <p class="is-size-6 has-text-grey" style="margin-top:0.75rem;">
+        Note: Examples above are external or illustrative videos meant as inspiration; they showcase what robust locomotion policies and systems can achieve when trained and tuned extensively on Isaac Lab.
+      </p>
+      <div class="content has-text-justified">
+        <p>
+          This is what an IsaacLab RL training looks like in the IsaacSim simulator:
+        </p>
+      </div>
       <!-- Added: PPO training in Isaac Lab (local video) -->
       <div class="card" style="margin-top:1.5rem;">
         <div class="card-image">
           <figure class="image">
-            <video poster="static/images/training_poster.png" style="width:100%; height:auto;" controls muted loop playsinline>
+            <video style="width:100%; height:auto;" controls muted loop playsinline>
               <source src="static/videos/isaaclab_go2_training.mp4" type="video/mp4">
             </video>
           </figure>
         </div>
         <div class="card-content" style="padding:0.75rem 1rem;">
-          <p class="has-text-weight-semibold">What PPO training looks like in Isaac Lab (sample training session).</p>
+          <p class="has-text-weight-semibold">What PPO training looks like in Isaac Lab (not rendered in real time).</p>
         </div>
       </div>
-
-      <p class="is-size-6 has-text-grey" style="margin-top:0.75rem;">
-        Note: Examples above are external or illustrative videos meant as inspiration; they showcase what robust locomotion policies and systems can achieve when trained and tuned extensively on Isaac Lab.
-      </p>
     </div>
   </section>
 
@@ -152,15 +155,6 @@
           <li>Benchmark with metrics like velocity tracking error, base orientation error, slip count, episode length, and energy proxies to guide iteration.</li>
         </ul>
       </div>
-
-      <h3 class="title is-4">Tools and references</h3>
-      <div class="content">
-        <ul>
-          <li>Isaac Lab: unified, modular framework with legged locomotion tasks and Unitree robot assets including Go2.</li>
-          <li>PPO baselines for fast legged locomotion training in GPU simulators such as Isaac Gym, with demonstrated sim-to-real policies.</li>
-          <li>Course context: NYU Tandon RL and optimal control coursework led by Prof. Righetti.</li>
-        </ul>
-      </div>
     </div>
   </section>
 
@@ -173,7 +167,7 @@
           <div class="card">
             <div class="card-image">
               <figure class="image">
-                <video poster="static/images/baseline_poster.png" style="width:100%; height:auto;" controls muted loop playsinline>
+                <video style="width:100%; height:auto;" controls muted loop playsinline>
                   <source src="static/videos/baseline_poor.mp4" type="video/mp4">
                 </video>
               </figure>
