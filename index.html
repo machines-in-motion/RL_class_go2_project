@@ -241,11 +241,15 @@
           <a href="https://github.com/Jogima-cyber/IsaacGymEnvs/blob/e351da69e05e0433e746cef0537b50924fd9fdbf/isaacgymenvs/tasks/go2_terrain.py" target="_blank" rel="noopener">
             Go2 walking environment used by the authors
           </a>
-          — Reward function used by the authors is <code>diffRecalculateReward</code>; this implementation includes strong reward shaping, domain randomization, and training disturbances for robust sim‑to‑real, but it is written for legacy IsaacGym and the challenge is to re-implement it in Isaac Lab. <!-- Ref: DMO + code -->
+          &nbsp;•&nbsp;
+          <a href="https://github.com/Jogima-cyber/IsaacGymEnvs/blob/e351da69e05e0433e746cef0537b50924fd9fdbf/isaacgymenvs/cfg/task/Go2Terrain.yaml" target="_blank" rel="noopener">
+            Config file used by the authors
+          </a>
+          — Look at the function <code>compute_reward_CaT</code> (beware that some reward terms have a weight of 0 and thus are deactivated, check weights in the config file); this implementation includes strong reward shaping, domain randomization, and training disturbances for robust sim‑to‑real, but it is written for legacy IsaacGym and the challenge is to re-implement it in Isaac Lab. <!-- Ref: DMO + code -->
         </li>
       </ul>
     </div>
-  </diviv>
+  </div>
 </section>
 
 
