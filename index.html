@@ -186,33 +186,54 @@
     </div>
   </section>
 
-  <!-- 4) Target Gait Example (single wide card, not 3 columns) -->
+  <!-- 4) Target Gait Example (Two Columns) -->
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Target gait example</h2>
       <p class="has-text-justified">
-        The clip below illustrates the type of stable, symmetric trot and directional tracking expected by the end of the project, emphasizing clean footfalls, limited slip, and consistent base orientation.
+        The clips below illustrate the type of stable, symmetric trot and directional tracking expected by the end of the project, emphasizing clean footfalls, limited slip, and consistent base orientation.
       </p>
 
-      <!-- Single wide card (no columns) -->
-      <div class="card" style="margin-top:1rem;">
-        <div class="card-image">
-          <figure class="image">
-            <video poster="static/images/quad_poster.png" style="width:100%; height:auto;" controls muted loop playsinline>
-              <source src="static/videos/demo_hardware_quadrupedal.mp4" type="video/mp4">
-            </video>
-          </figure>
+      <div class="columns is-multiline is-variable is-5" style="margin-top:1rem;">
+        <!-- Column 1: Hardware Reference -->
+        <div class="column is-12-mobile is-6-tablet is-6-desktop">
+          <div class="card" style="height:100%;">
+            <div class="card-image">
+              <figure class="image">
+                <video poster="static/images/quad_poster.png" style="width:100%; height:auto;" controls muted loop playsinline>
+                  <source src="static/videos/demo_hardware_quadrupedal.mp4" type="video/mp4">
+                </video>
+              </figure>
+            </div>
+            <div class="card-content" style="padding:0.75rem 1rem;">
+              <p class="has-text-weight-semibold">Stable trot at nominal speed with low slip (Hardware).</p>
+            </div>
+          </div>
         </div>
-        <div class="card-content" style="padding:0.75rem 1rem;">
-          <p class="has-text-weight-semibold">Stable trot at nominal speed with low slip.</p>
+
+        <!-- Column 2: Good Simulation Policy -->
+        <div class="column is-12-mobile is-6-tablet is-6-desktop">
+          <div class="card" style="height:100%;">
+            <div class="card-image">
+              <figure class="image">
+                <video style="width:100%; height:auto;" controls muted loop playsinline>
+                  <source src="static/videos/demo_simulation_perfect.mp4" type="video/mp4">
+                </video>
+              </figure>
+            </div>
+            <div class="card-content" style="padding:0.75rem 1rem;">
+              <p class="has-text-weight-semibold">Example of a good policy trained in simulation.</p>
+            </div>
+          </div>
         </div>
       </div>
 
       <p class="is-size-6 has-text-grey" style="margin-top:0.75rem;">
-        Treat this as a qualitative reference for gait quality and document the design choices that lead to similar behavior.
+        Treat these as qualitative references for gait quality and document the design choices that lead to similar behavior.
       </p>
     </div>
   </section>
+
 
   <!-- Resources -->
 <!-- Resources -->
